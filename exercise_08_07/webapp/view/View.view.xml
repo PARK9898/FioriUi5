@@ -1,0 +1,86 @@
+<mvc:View controllerName="exercise0807.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page"
+        title="{i18n>title}">
+        <VBox >
+            <Label text="Carrier ID"
+                labelFor="input-carrid"/>
+            <Input id="input-carrid"
+                placeholder="{i18n>Carrid}"
+                required="true"
+                value="{/input-carrid}"/>
+
+            <Label text="Carrier Name"
+                labelFor="input-carrname"/>
+            <Input id="input-carrname"
+                placeholder="{i18n>Carrname}"
+                required="true"
+                value="{/input-carrname}"/>
+
+            <Label text="Currnecy Code"
+                labelFor="input-curcode"/>
+            <Input id="input-currcode"
+                placeholder="{i18n>CurRcode}"
+                required="true"
+                value="{/input-currcode}"/>
+
+            <Label text="URL"
+                labelFor="input-url"/>
+            <Input id="input-url"
+                placeholder="{i18n>URL}"
+                required="true"
+                value="{/input-url}"/>
+            <HBox >
+                <Button text="Create Entry"
+                    press="onCreate" />
+                <Button text="Delete Entry"
+                    press="onDelete" />
+                <Button text="Update Entry"
+                    press="onOpenDialog" />
+            </HBox>
+        </VBox>
+
+        <Table id = "mTable"
+            mode="SingleSelectLeft"
+            
+            
+
+            items = "{data>/ZCARR_D08Set}">
+            <columns>
+                <Column >
+                    <header>
+                        <Label text = "Carrid"/>
+                    </header>
+                </Column>
+                <Column >
+                    <header>
+                        <Label text = "Carrname"/>
+                    </header>
+                </Column>
+                <Column >
+                    <header>
+                        <Label text = "Currcode"/>
+                    </header>
+                </Column>
+                <Column >
+                    <header>
+                        <Label text = "Url"/>
+                    </header>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{data>Carrid}" />
+                        <Text text="{data>Carrname}" />
+                        <Text text="{data>Currcode}" />
+                        <Link text="{data>Url}"
+                            href="{data>Url}"
+                            target="_blank" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

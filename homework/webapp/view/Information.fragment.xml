@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+  <Dialog id="infoDialog"
+    
+      title ="{i18n>DialogTitle}">
+    <content>
+      <VBox>
+        <Text text="{dialogModel>/Name}" />
+        <Text text="{dialogModel>/Position}" />
+        <Text text="{dialogModel>/Department}" />
+        <Text text="{dialogModel>/Status}" />
+        <Text text="{dialogModel>/Email}" />
+        <Text text="{dialogModel>/Phone}" />
+        <Text text="{dialogModel>/Location}" />
+        <Text text="{dialogModel>/Salary}" />
+      </VBox>
+    </content>
+    <buttons>
+      <Button text="Close"
+        press=".onCloseDialog" />
+    </buttons>
+  </Dialog>
+</core:FragmentDefinition>
+

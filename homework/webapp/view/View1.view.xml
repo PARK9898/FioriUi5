@@ -1,0 +1,25 @@
+<mvc:View controllerName="homework.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="page"
+        title="{i18n>title}">
+        <List id="EmployeeList"
+            mode="SingleSelectMaster"
+            headerText="{i18n>listTitle}"
+            class="sapUiResponsiveMargin"
+            itemPress="onPress"
+            width="auto"
+            items="{
+            path : 'Employees>/Employees'
+           }">
+            <items>
+                <ObjectListItem type="Active"
+                    title="{Employees>Name}"
+                    number="{Employees>Position}"
+                    numberUnit="{Employees>Department}">
+                </ObjectListItem>
+            </items>
+        </List>
+    </Page>
+</mvc:View>

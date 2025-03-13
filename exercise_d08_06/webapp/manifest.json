@@ -1,0 +1,101 @@
+{
+    "_version": "1.65.0",
+    "sap.app": {
+        "id": "cl4studentinformation.exercised0806",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.16.5",
+            "toolsId": "a8e3d937-d10e-42ed-9a8e-12d60c123f3e"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.133.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "cl4studentinformation.exercised0806.i18n.i18n"
+                }
+            },
+            "student": { 
+            "type": "sap.ui.model.json.JSONModel",
+            "uri": "student.json"
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "transition": "slide",
+                "type": "View",
+                "viewType": "XML",
+                "path": "cl4studentinformation.exercised0806.view",
+                "async": true,
+                "viewPath": "cl4studentinformation.exercised0806.view"
+            },
+            "routes": [
+                {
+                    "name": "RouteView",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetView"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetView": {
+                    "id": "View",
+                    "name": "View"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "cl4studentinformation.exercised0806.view.App",
+            "type": "XML",
+            "id": "App"
+        }
+    }
+}

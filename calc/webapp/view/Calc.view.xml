@@ -1,0 +1,37 @@
+<mvc:View controllerName="calcprogram.calc.controller.Calc"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <VBox id = "v">
+                <Label id="inputNum1" text="첫 번째 숫자" required="true" />
+
+                <Input id="input1" width="60%" value="{/input1}" />
+
+                <Label id="inputNum2" text="두 번째 숫자" required="true" />
+
+                <Input id="input2" width="60%" value="{/input2}" />
+
+                <Label id="calcPick" text="연산 선택" required="true" />
+
+                <ComboBox id="operationSelect" width="60%" selectedKey="{/selectedOperation}">
+                    <items>
+                        <core:Item id = "ad" key="add" text="더하기 (+)" />
+                        <core:Item id = "sub" key="sub" text="빼기 (-)" />
+                        <core:Item id = "mul" key="mul" text="곱하기 (*)" />
+                        <core:Item id = "div" key="div" text="나누기 (/)" />
+                    </items>
+                </ComboBox>
+
+                <Button id="calcButton" text="계산하기" press="onPressCalc" />
+
+                <Button id="seecalc" text="구구단보기" press="onPressSee" />
+
+                <Label id="result" text="결과" />
+
+                <Label id="resultNum" text="{/result}" />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

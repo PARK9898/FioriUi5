@@ -1,0 +1,11 @@
+<mvc:View controllerName="exercise0809.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="{i18n>title}"
+        showNavButton= "true"
+        navButtonPress="onGoBack">
+        <content>
+            <Text  text = "Detail Page"></Text>
+        </content>
+    </Page>
+</mvc:View>

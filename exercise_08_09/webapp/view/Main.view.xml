@@ -1,0 +1,12 @@
+<mvc:View controllerName="exercise0809.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page"
+        title="{i18n>title}">
+        <content>
+            <Input id  = "input-id"/>
+            <Button text="Detail"
+                press=".onGoDetail"/>
+        </content>
+    </Page>
+</mvc:View>

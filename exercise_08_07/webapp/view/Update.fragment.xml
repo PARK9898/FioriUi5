@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog id="updateDialog"
+        
+        
+        
+      title ="Selected Data">
+        <Label text="Name"
+            labelFor="carrName"/>
+        <Input id="carrName"
+            value="{data>Carrname}"/>
+        <Label text="Url"
+            labelFor="url"/>
+        <Input id="url"
+            value="{data>Url}"/>
+        <buttons>
+            <Button text="{i18n>dialogCloseButtonText}"
+                press=".onCloseDialog"/>
+            <Button text="{i18n>dialogUpdateButtonText}"
+                press=".onUpdate"/>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

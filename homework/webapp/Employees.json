@@ -1,0 +1,34 @@
+{
+    "Employees": [
+      {
+        "Name": "김준태",
+        "Position": "Software Engineer",
+        "Department": "IT",
+        "Status": "Active",
+        "Email": "xo0518@example.com",
+        "Phone": "123-456-7890",
+        "Location": "New York",
+        "Salary": "$80,000"
+      },
+      {
+        "Name": "서정목",
+        "Position": "HR Manager",
+        "Department": "HR",
+        "Status": "Inactive",
+        "Email": "jungmok@example.com",
+        "Phone": "987-654-3210",
+        "Location": "Los Angeles",
+        "Salary": "$90,000"
+      },
+      {
+        "Name": "이승환",
+        "Position": "Marketing Lead",
+        "Department": "Marketing",
+        "Status": "Active",
+        "Email": "승환@example.com",
+        "Phone": "555-123-4567",
+        "Location": "San Francisco",
+        "Salary": "$95,000"
+      }
+    ]
+  }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>UI5 Walkthrough</title>
+    <!--SAP UI5 초기화 애플리케이션 실행하는 핵심 역할할-->
+    <script
+      id="sap-ui-bootstrap"
+      src="resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_horizon"
+      data-sap-ui-libs="sap.m"
+      data-sap-ui-compat-version="edge"
+      data-sap-ui-async="true"
+      data-sap-ui-on-init="module:sap/ui/core/ComponentSupport"
+      data-sap-ui-on-init="module:ui5/walkthrough/index"
+      data-sap-ui-resource-roots='{
+            "ui5.walkthrough": "./"
+        }'
+    ></script>
+  </head>
+  <!-- BDDY를 sapui5스럽게 바꿔준다 ontect 안에 js에서 작성한 내용을 넣을것이다.-->
+  <!-- sapUiBody는 sap_horizon안에 있는것이라서 사용이 가능해진다-->
+  <body class="sapUiBody" id="content">
+    <div
+      data-sap-ui-component
+      data-name="ui5.walkthrough"
+      data-id="container"
+      data-settings='{"id" : "walkthrough"}'
+    ></div>
+  </body>
+  <!---BODY에 담을 때는 해당 클래스 타입으로 담아라라-->
+</html>

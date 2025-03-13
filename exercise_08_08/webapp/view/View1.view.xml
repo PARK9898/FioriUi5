@@ -1,0 +1,40 @@
+<mvc:View controllerName="exercise0808.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns="sap.m">
+    <Page id="page"
+        title="{i18n>title}">
+        <content>
+            <viz:VizFrame id="LineChart"
+                width="100%"
+                height="600px"
+                vizType="line"
+                vizProperties="{title : {text: 'Top 5 Product'}, visible:true}">
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{chartData>/products}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="Product"
+                                value="{chartData>DisplayName}" />
+                        </viz.data:dimensions>
+
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Stock"
+                                value="{chartData>UnitsInStock}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="categoryAxis"
+                        type="Dimension"
+                        values="Product"/>
+                    <viz.feeds:FeedItem uid="valueAxis"
+                        type="Measure"
+                        values="Stock"/>
+                </viz:feeds>
+            </viz:VizFrame>
+        </content>
+    </Page>
+</mvc:View>
