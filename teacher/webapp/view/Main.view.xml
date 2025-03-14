@@ -5,42 +5,49 @@
     xmlns:c="sap.ui.core"
     
     
-    
-    
     xmlns:m = "sap.m">
     <m:Page id="page"
         title="{i18n>title}"
         showHeader="false"
         enableScrolling="false"
         class="sapUiContentPadding">
+
         <m:content>
+            <m:VBox>
+                <m:Toolbar design="Solid">
+                    <m:Title text="CLASS"
+                        level="H2"/>
+                </m:Toolbar>
+            </m:VBox>
+            <m:HBox height="20px"/>
             <Table selectionMode="MultiToggle"
+                width="100%"
                 paste="onPaste"
                 ariaLabelledBy="title"
                 rows="{teachers>/ZTEACHER_D08Set}">
                 <columns>
-                    <Column width="11rem">
+                    <Column width="20rem">
                         <m:Label text="Name" />
                         <template>
                             <m:Text text="{teachers>Name}"
                                 wrapping="false" />
                         </template>
                     </Column>
-                    <Column width="11rem">
+                    <Column width="20rem">
                         <m:Label text="Class" />
                         <template>
                             <m:Text text="{teachers>Class}"
                                 wrapping="false" />
                         </template>
                     </Column>
-                    <Column width="11rem">
+                    <Column width="20rem">
                         <m:Label text="Gender" />
                         <template>
                             <m:Text text="{teachers>Gender}"
                                 wrapping="false" />
                         </template>
                     </Column>
-                    <Column width="9rem">
+                    <Column width="20rem">
                         <m:Label text="Details" />
                         <template>
                             <m:Button text="Button"
@@ -50,5 +57,6 @@
                 </columns>
             </Table>
         </m:content>
+
     </m:Page>
 </mvc:View>
