@@ -5,7 +5,13 @@
         showNavButton= "true"
         navButtonPress="onGoBack">
         <content>
-            <Text  text = "Detail Page"></Text>
+            <VBox>
+                <Text text = "{detailModel>/no}"/>
+                <Text text = "{detailModel>/name}"/>
+                <Text text = "{detailModel>/gender}"/>
+                <Text text = "{detailModel>/birthdate}"/>
+            </VBox>
         </content>
+
     </Page>
 </mvc:View>

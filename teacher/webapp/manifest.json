@@ -1,7 +1,7 @@
 {
-    "_version": "1.65.0",
+    "_version": "1.60.0",
     "sap.app": {
-        "id": "exercise0809",
+        "id": "teacher",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -13,7 +13,18 @@
         "sourceTemplate": {
             "id": "@sap/generator-fiori:basic",
             "version": "1.16.5",
-            "toolsId": "2bfa1b61-c3c3-49fe-ad8a-4e3b6017958d"
+            "toolsId": "ee8191dc-c526-4431-92f0-ab7bc9d03670"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/ZTEACHER_D08_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/mainService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
         }
     },
     "sap.ui": {
@@ -35,7 +46,7 @@
     "sap.ui5": {
         "flexEnabled": false,
         "dependencies": {
-            "minUI5Version": "1.133.0",
+            "minUI5Version": "1.120.0",
             "libs": {
                 "sap.m": {},
                 "sap.ui.core": {}
@@ -49,13 +60,13 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "exercise0809.i18n.i18n"
+                    "bundleName": "teacher.i18n.i18n"
                 }
-            }
-,
-            "student": { 
-            "type": "sap.ui.model.json.JSONModel",
-            "uri": "student.json"
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
             }
         },
         "resources": {
@@ -73,9 +84,9 @@
                 "transition": "slide",
                 "type": "View",
                 "viewType": "XML",
-                "path": "exercise0809.view",
+                "path": "teacher.view",
                 "async": true,
-                "viewPath": "exercise0809.view"
+                "viewPath": "teacher.view"
             },
             "routes": [
                 {
@@ -84,31 +95,17 @@
                     "target": [
                         "TargetMain"
                     ]
-                },
-                {
-                    "name": "RouteDetail",
-                    "pattern": "detail/{no}/{name}/{gender}/{birthdate}",
-                    "target": [
-                        "TargetDetail"
-                    ]
                 }
             ],
-
-            
             "targets": {
                 "TargetMain": {
                     "id": "Main",
                     "name": "Main"
-                },
-                "TargetDetail": {
-                    "viewType": "XML",
-                    "viewId": "Detail",
-                    "viewName": "Detail"
                 }
             }
         },
         "rootView": {
-            "viewName": "exercise0809.view.App",
+            "viewName": "teacher.view.App",
             "type": "XML",
             "id": "App"
         }
