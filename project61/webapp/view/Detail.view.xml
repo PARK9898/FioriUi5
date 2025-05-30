@@ -1,0 +1,12 @@
+<mvc:View controllerName="exratewithvouitem.project61.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="detailPage"
+        title="{i18n>detailTitle}"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+        <content>
+
+        </content>
+    </Page>
+</mvc:View>

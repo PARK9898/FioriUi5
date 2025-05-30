@@ -1,0 +1,47 @@
+<mvc:View controllerName="cl4.exprogramd08.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    <Page title="{i18n>Detail}"
+        showNavButton="true"
+        navButtonPress="onGoBack">
+        <content>
+            <!-- Layout 설정정 -->
+            <f:SimpleForm editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanL="6"
+                labelSpanM="6"
+                columnsL="1"
+                columnsM="1"
+                emptySpanL="4"
+                adjustLabelSpan="false"
+                emptySpanS="0">
+                <!-- 정보를 라벨 & Text로 출력 -->
+                <Label text="회원번호" />
+                <Text text="{detailModel>/Id}" />
+                <Label text="회원이름" />
+                <Text text="{detailModel>/Name}" />
+                <Label text="생년월일" />
+                <Text text="{detailModel>/Bdate}" />
+                <Label text="성별" />
+                <Text text="{detailModel>/Gender}" />
+                <Label text="도시" />
+                <Text text="{detailModel>/City}" />
+                <Label text="국가코드" />
+                <Text text="{detailModel>/Country}" />
+                <Label text="전화번호" />
+                <Text text="{detailModel>/Telephone}" />
+                <Label text="E-mail" />
+                <Text text="{detailModel>/Email}" />
+                <!-- Main으로 돌아가는 버튼 생성성 -->
+                <Toolbar >
+                    <Button text="메인으로"
+                        
+                        type = "Default"
+                        press="onGotoMain" />
+                </Toolbar>
+            </f:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

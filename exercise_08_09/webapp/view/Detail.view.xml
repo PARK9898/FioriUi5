@@ -12,6 +12,5 @@
                 <Text text = "{detailModel>/birthdate}"/>
             </VBox>
         </content>
-
     </Page>
 </mvc:View>

@@ -1,0 +1,58 @@
+<mvc:View controllerName="project65.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="page2"
+        title="거래내역 상세조회"
+        showNavButton="true"
+        navButtonPress="onGoBack">
+        <content>
+            <Table id="customerTable"
+                headerText="{= ${detailModel>/year} + '년 ' + ${detailModel>/month} + '월 ' + (${detailModel>/country} === 'CNY' ? '중국' : 
+        ${detailModel>/country} === 'JPY' ? '일본' : ${detailModel>/country}) +
+      '지사 거래내역'}"
+                fixedLayout="false"
+                mode="SingleSelectMaster"
+                items="{custModel>/DateSummary}"
+                itemPress="onCustomerRowPress"
+                class="sapUiResponsiveMargin"
+                growing="true"
+                growingScrollToLoad="true"
+                width="auto">
+
+                <columns>
+                    <Column width="8em">
+                        <Text text="날짜"/>
+                    </Column>
+                    <Column width="12em"
+                        hAlign="End">
+                        <Text text="매출액"/>
+                    </Column>
+                    <Column width="4em"
+                        hAlign="Center">
+                        <Text text="통화"/>
+                    </Column>
+                    <Column width="9em"
+                        hAlign="End">
+                        <Text text="환율 적용 매출액"/>
+                    </Column>
+                    <Column width="4em"
+                        hAlign="Center">
+                        <Text text="통화"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active">
+                        <cells>
+                            <Text text="{custModel>CreatedDate}"/>
+                            <Text text="{custModel>TotalAmount}"/>
+                            <Text text="{custModel>Currency}"/>
+                            <Text text="{custModel>TgTotal}"/>
+                            <Text text="{custModel>TgCurrency}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

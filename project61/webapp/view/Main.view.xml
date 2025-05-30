@@ -1,0 +1,170 @@
+<mvc:View xmlns:launchpad="sap.ushell.ui.launchpad"
+    controllerName="exratewithvouitem.project61.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:card="sap.f.cards"
+    xmlns:w="sap.ui.integration.widgets"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns="sap.m">
+    <Page id="page"
+        title="{i18n>title}">
+        <content>
+            <Panel width="auto"
+                class="sapUiSmallMarginBottom">
+                <!-- 조회 연도와 ComboBox를 묶음 -->
+                <HBox width="100%"
+                    alignItems="Center">
+                    <Label text="연도"
+                        design= "Bold" />
+                    <ComboBox id="yearComboBox"
+                        width="120px">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </ComboBox>
+                    <!-- 조회 버튼 -->
+
+                    <Label text="월"
+                        design="Bold">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </Label>
+                    <ComboBox id="monthComboBox"
+                        width="80px">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </ComboBox>
+
+                    <Label text="국가"
+                        design="Bold">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </Label>
+                    <ComboBox id="countryComboBox"
+                        width="100px">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </ComboBox>
+
+                    <ToolbarSpacer/>
+                    <!-- Search 버튼 -->
+                    <Button text="Search"
+                        type="Emphasized"
+                        icon="sap-icon://search"
+                        press="onSearch">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </Button>
+                    <Button text="거래내역 조회"
+                        type="Emphasized"
+                        icon="sap-icon://search"
+                        press="onSearch_VoucherItems">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </Button>
+                </HBox>
+            </Panel>
+            <VBox width="100%"
+                alignItems="Center"
+                class="sapUiSmallMarginTop"
+                xmlns:card="sap.ui.integration.widgets">
+                <HBox justifyContent="Center"
+                    width="100%"
+                    fitContainer="true"
+                    wrap="Wrap">
+                    <card:Card manifest="{cardModel>/manifest1}"
+                        width="250px"
+                        height="150px"
+                        class="sapUiMediumMarginEnd"/>
+                    <card:Card manifest="{cardModel>/manifest2}"
+                        width="250px"
+                        height="150px"
+                        class="sapUiMediumMarginEnd"/>
+                    <card:Card manifest="{cardModel>/manifest3}"
+                        width="250px"
+                        height="150px"
+                        class="sapUiMediumMarginEnd"/>
+                    <card:Card manifest="{cardModel>/manifest4}"
+                        width="250px"
+                        height="150px"
+                        class="sapUiMediumMarginEnd"/>
+                </HBox>
+                <ToolbarSpacer width="200px" />
+                <HBox height="30px"></HBox>
+
+                <Panel width= '1200px'>
+                    <viz:VizFrame id="ExRateChart"
+                        width="100%"
+                        height="300px"
+                        vizType="line">
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset data="{chart>/ExchangeRates}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition name="환율 적용일"
+                                        value="{chart>ValfrDate}" />
+                                </viz.data:dimensions>
+
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition name="환율(KRW)"
+                                        value="{chart>ExRate}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+                        <viz:feeds>
+                            <viz.feeds:FeedItem uid="categoryAxis"
+                                type="Dimension"
+                                values="환율 적용일"/>
+                            <viz.feeds:FeedItem uid="valueAxis"
+                                type="Measure"
+                                values="환율(KRW)"/>
+                        </viz:feeds>
+                    </viz:VizFrame>
+                </Panel>
+                <HBox height="30px" />
+                <ToolbarSpacer width="20px" />
+                <Panel width="1200px">
+                    <viz:VizFrame id="voucherItemChart"
+                        width="100%"
+                        height="300px"
+                        vizType="column">                        <!-- 여기서 vizType을 column으로 변경 -->
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset data="{chart2>/VoucherItems}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition name="거래 날짜"
+                                        value="{chart2>CreatedDate}" />
+                                </viz.data:dimensions>
+
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition name="거래 당일 기준 금액"
+                                        value="{chart2>TgPrice}" />
+                                    <viz.data:MeasureDefinition name="현재 날짜 기준 금액"
+                                        value="{chart2>CalculatedPrice}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+                        <viz:feeds>
+                            <viz.feeds:FeedItem uid="categoryAxis"
+                                type="Dimension"
+                                values="거래 날짜"/>
+                            <viz.feeds:FeedItem uid="valueAxis"
+                                type="Measure"
+                                values="거래 당일 기준 금액"/>
+                            <viz.feeds:FeedItem uid="valueAxis"
+                                type="Measure"
+                                values="현재 날짜 기준 금액"/>
+                        </viz:feeds>
+                    </viz:VizFrame>
+                </Panel>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

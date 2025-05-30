@@ -43,9 +43,6 @@
 
         <Table id = "mTable"
             mode="SingleSelectLeft"
-            
-            
-
             items = "{data>/ZCARR_D08Set}">
             <columns>
                 <Column >

@@ -3,15 +3,12 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:u="sap.ui.unified"
     xmlns:c="sap.ui.core"
-    
-    
     xmlns:m = "sap.m">
     <m:Page id="page"
         title="{i18n>title}"
         showHeader="false"
         enableScrolling="false"
         class="sapUiContentPadding">
-
         <m:content>
             <m:VBox>
                 <m:Toolbar design="Solid">
@@ -20,6 +17,7 @@
                 </m:Toolbar>
             </m:VBox>
             <m:HBox height="20px"/>
+
             <Table selectionMode="MultiToggle"
                 width="100%"
                 paste="onPaste"

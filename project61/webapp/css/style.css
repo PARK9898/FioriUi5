@@ -1,0 +1,18 @@
+.equalColumns .columns {
+	min-height: 200px;
+}
+
+.equalColumns .columns .sapMFlexItem {
+	padding: 0.5rem;
+}
+
+
+.sapUiMediumMarginEnd {
+    margin-right: 16px;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZDCFI_GW_002_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZDCT_FI040" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BsCurrency"/>
+                    <PropertyRef Name="TgCurrency"/>
+                    <PropertyRef Name="ValfrDate"/>
+                </Key>
+                <Property Name="BsCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="기준 통화" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="TgCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="대상 통화" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="ValfrDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="날짜" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ExRate" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="TgCurrency" sap:label="통화간 환율값" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZDCT_FI021" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ItemId"/>
+                    <PropertyRef Name="VouId"/>
+                </Key>
+                <Property Name="ItemId" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="아이템 라인 번호" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="VouId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="전표번호" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GlId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="계정 ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BsCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="기준 통화" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="BasePrice" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="BsCurrency" sap:label="기준금액" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TgCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="대상 통화" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="TgPrice" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="TgCurrency" sap:label="대상금액" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DbcrInd" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="차/대변 지시자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ClrId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="반제전표번호" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BpId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="거래처ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RpId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="역분개 대상 전표번호" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreatedDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="생성일자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZDCT_SD010" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CustId"/>
+                </Key>
+                <Property Name="CustId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="고객 ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CustName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="고객명" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Address" Type="Edm.String" Nullable="false" MaxLength="75" sap:unicode="false" sap:label="주소" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="국가코드" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Telephone" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="전화번호" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EMail" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="이메일" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BusiId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="사업자등록번호" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompCode" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="회사코드" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AveOrder" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="Currency" sap:label="평균 오더 금액" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="통화" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="CredRate" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="신용등급" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CredLimit" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="CredCurrency" sap:label="남은한도" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CredCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="통화" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+            </EntityType>
+            <EntityContainer Name="ZDCFI_GW_002_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZDCT_FI040Set" EntityType="ZDCFI_GW_002_SRV.ZDCT_FI040" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZDCT_FI021Set" EntityType="ZDCFI_GW_002_SRV.ZDCT_FI021" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZDCT_SD010Set" EntityType="ZDCFI_GW_002_SRV.ZDCT_SD010" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="http://bgissap1.bgissap.co.kr:8000/sap/opu/odata/sap/ZDCFI_GW_002_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://bgissap1.bgissap.co.kr:8000/sap/opu/odata/sap/ZDCFI_GW_002_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

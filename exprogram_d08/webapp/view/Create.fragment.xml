@@ -1,0 +1,61 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    <Dialog id="createDialog"
+        title="회원 정보 등록">
+        <!-- simple Form 을 통해 Layout 설정정 -->
+        <f:SimpleForm editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanL="3"
+            labelSpanM="3"
+            columnsL="1"
+            columnsM="1">
+            <Label text="회원이름" />
+            <Input id="Name"
+                required="true"
+                value="{Name}" />
+            <Label text="생년월일" />
+            <!-- Date Picker를 이용해 달력에서 날짜 가져올 수 있도록 설정정 -->
+            <DatePicker id="Bdate"
+                placeholder="YYYY-MM-DD"
+                displayFormat="yyyy-MM-dd"
+                valueFormat="yyyy-MM-dd"
+                required="true"
+                value="{Bdate}" />
+            <Label text="성별" />
+            <Input id="Gender"
+                placeholder="남/여"
+                required="true"
+                value="{Gender}" />
+            <Label text="도시" />
+            <Input id="City"
+                required="true"
+                value="{City}" />
+            <Label text="국가코드" />
+            <Input id="Country"
+                required="true"
+                placeholder="KR"
+                value="{Country}" />
+            <Label text="전화번호" />
+            <Input id="Telephone"
+                required="true"
+                value="{Telephone}" />
+            <Label text="E-mail" />
+            <Input id="Email"
+                required="true"
+                value="{Email}" />
+        </f:SimpleForm>
+        <buttons>
+            <!-- 버튼 색상 지정 & 버튼 생성 -->
+            <Button text="저장"
+                
+                type = "Emphasized"
+                press=".onCreate" />
+            <Button 
+            type = "Reject"
+                text="취소"
+                press=".onCloseDialog" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

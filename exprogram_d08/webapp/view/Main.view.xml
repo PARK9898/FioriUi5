@@ -1,0 +1,65 @@
+<mvc:View controllerName="cl4.exprogramd08.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:u="sap.ui.unified"
+    xmlns:c="sap.ui.core"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page"
+        title="{i18n>title}">
+        <content>
+            <Toolbar>
+                <ToolbarSpacer />
+                <!-- 버튼에 icon 생성 & 눌렀을 경우 함수 정의의 -->
+                <Button text="회원등록"
+                    icon="sap-icon://employee-pane"
+                    press="onCreatePress" />
+            </Toolbar>
+            <Table id = "mTable"
+                
+            visible = "true"
+                
+            items = "{data>/ZTMEMBERSet}">
+                <columns>
+                    <Column >
+                        <header>
+                            <Label text = "회원번호"/>
+                        </header>
+                    </Column>
+                    <Column >
+                        <header>
+                            <Label text = "이름"/>
+                        </header>
+                    </Column>
+                    <Column >
+                        <header>
+                            <Label text = "생년월일"/>
+                        </header>
+                    </Column>
+                    <Column >
+                        <header>
+                            <Label text = "이메일"/>
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <!-- type 을 Navigation으로 설정함으로써 꺽쇠 추가가 -->
+                    <ColumnListItem press = "onGoDetail"
+                        type="Navigation">
+                        <cells>
+                            <Text text="{data>Id}"
+                                wrapping="false"/>
+                            <Text text="{data>Name}"
+                                wrapping="false" />
+                            <!-- yyyy-mm-dd형식으로 포메팅  -->
+                            <Text text="{ path: 'data>Bdate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd', UTC: true } }"/>
+                            <Text text="{data>Email}"
+                                wrapping="false" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

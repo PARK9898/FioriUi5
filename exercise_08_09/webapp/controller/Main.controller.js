@@ -13,7 +13,6 @@ sap.ui.define(
       },
       _onPatternMatched(oEvent) {
         var oArgu = oEvent.getParameter("arguments");
-        debugger;
         // var oArgu = oEvent.getParameters().arguments;
       },
       onGoDetail() {

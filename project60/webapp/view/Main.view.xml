@@ -1,0 +1,62 @@
+<mvc:View controllerName="exratecomparewithvouitem.project60.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="page"
+        title="{i18n>title}">
+        <content>
+            <Panel width="auto">
+                <!-- 조회 연도와 ComboBox를 묶음 -->
+                <HBox width="100%"
+                    alignItems="Center">
+                    <Label text="연도"
+                        design= "Bold" />
+                    <ComboBox id="yearComboBox"
+                        width="120px">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </ComboBox>
+                    <!-- 조회 버튼 -->
+
+                    <Label text="월"
+                        design="Bold">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </Label>
+                    <ComboBox id="monthComboBox"
+                        width="80px">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </ComboBox>
+
+                    <Label text="국가"
+                        design="Bold">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </Label>
+                    <ComboBox id="countryComboBox"
+                        width="100px">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </ComboBox>
+
+                    <ToolbarSpacer/>
+                    <!-- Search 버튼 -->
+                    <Button text="Search"
+                        type="Emphasized"
+                        icon="sap-icon://search"
+                        press="onSearch">
+                        <layoutData>
+                            <FlexItemData styleClass="sapUiSmallMarginBegin" />
+                        </layoutData>
+                    </Button>
+                </HBox>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>
